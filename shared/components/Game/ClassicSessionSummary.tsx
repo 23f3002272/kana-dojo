@@ -3,7 +3,7 @@
 import React, { useMemo } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import {
-  Menu,
+  CircleArrowLeft,
   RotateCcw,
   Timer,
   Zap,
@@ -134,7 +134,7 @@ export default function ClassicSessionSummary({
               <div className='mt-6 flex flex-col items-center text-center sm:mt-0 sm:items-start sm:text-left'>
                 <div className='mb-1 flex items-center gap-2'>
                   <Target className='h-5 w-5 text-(--main-color)' />
-                  <span className='text-sm font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
+                  <span className='text-sm leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
                     accuracy
                   </span>
                 </div>
@@ -151,7 +151,7 @@ export default function ClassicSessionSummary({
             <div className='flex flex-col justify-between rounded-[2.5rem] border-2 border-(--main-color)/20 bg-(--background-color) p-6 sm:p-8'>
               <div className='mb-auto flex items-center gap-2'>
                 <Timer className='h-5 w-5 text-(--main-color)' />
-                <span className='text-xs font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
+                <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
                   time spent
                 </span>
               </div>
@@ -163,7 +163,7 @@ export default function ClassicSessionSummary({
             <div className='flex flex-col justify-between rounded-[2.5rem] border-2 border-(--main-color)/20 bg-(--background-color) p-6 sm:p-8'>
               <div className='mb-auto flex items-center gap-2'>
                 <Star className='h-5 w-5 text-(--main-color)' />
-                <span className='text-xs font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
+                <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
                   stars
                 </span>
               </div>
@@ -178,7 +178,7 @@ export default function ClassicSessionSummary({
             <div className='flex flex-col rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6'>
               <div className='mb-2 flex items-center gap-2'>
                 <Trophy className='h-4 w-4 text-(--secondary-color) opacity-60' />
-                <span className='text-[0.6rem] font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-60'>
+                <span className='text-[0.6rem] leading-none font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-60'>
                   best streak
                 </span>
               </div>
@@ -190,7 +190,7 @@ export default function ClassicSessionSummary({
             <div className='flex flex-col rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6'>
               <div className='mb-2 flex items-center gap-2'>
                 <Zap className='h-4 w-4 text-(--secondary-color) opacity-60' />
-                <span className='text-[0.6rem] font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-60'>
+                <span className='text-[0.6rem] leading-none font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-60'>
                   avg. speed
                 </span>
               </div>
@@ -202,7 +202,7 @@ export default function ClassicSessionSummary({
             <div className='flex flex-col rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6'>
               <div className='mb-2 flex items-center gap-2'>
                 <Activity className='h-4 w-4 text-(--secondary-color) opacity-60' />
-                <span className='text-[0.6rem] font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-60'>
+                <span className='text-[0.6rem] leading-none font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-60'>
                   top speed
                 </span>
               </div>
@@ -214,7 +214,7 @@ export default function ClassicSessionSummary({
             <div className='flex flex-col rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6'>
               <div className='mb-2 flex items-center gap-2'>
                 <Zap className='h-4 w-4 text-(--secondary-color) opacity-60' />
-                <span className='text-[0.6rem] font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-60'>
+                <span className='text-[0.6rem] leading-none font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-60'>
                   answers/min
                 </span>
               </div>
@@ -231,16 +231,19 @@ export default function ClassicSessionSummary({
             onClick={onBackToSelection}
             className='flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 rounded-xl bg-(--secondary-color) px-4 text-lg font-bold text-(--background-color) lowercase outline-hidden transition-all duration-150 active:scale-95 active:brightness-95 sm:px-10 sm:text-xl md:flex-none'
           >
-            <Menu className='h-5 w-5 sm:h-6 sm:w-6' strokeWidth={2.5} />
-            menu
+            <CircleArrowLeft
+              className='h-5 w-5 sm:h-6 sm:w-6'
+              strokeWidth={2.5}
+            />
+            <span className='leading-none'>menu</span>
           </button>
           <button
             onClick={onNewSession}
             className='flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 rounded-xl bg-(--main-color) px-4 text-lg font-bold text-(--background-color) lowercase outline-hidden transition-all duration-150 active:scale-95 active:brightness-95 sm:px-12 sm:text-xl md:flex-none'
           >
             <RotateCcw className='h-5 w-5 sm:h-6 sm:w-6' strokeWidth={2.5} />
-            <span className='sm:hidden'>new</span>
-            <span className='hidden sm:inline'>new session</span>
+            <span className='leading-none sm:hidden'>new</span>
+            <span className='hidden leading-none sm:inline'>new session</span>
           </button>
         </div>
       </div>
