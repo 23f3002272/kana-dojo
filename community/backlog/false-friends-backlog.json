@@ -590,7 +590,7 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 4)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 66,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
